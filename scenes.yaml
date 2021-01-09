@@ -1,0 +1,88 @@
+- id: '1591562900155'
+  name: red lamp
+  entities:
+    light.lampa_vid_soffa:
+      brightness: 62
+      effect_list:
+      - colorloop
+      friendly_name: Lampa vid soffa
+      hs_color:
+      - 354.34
+      - 83.137
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 255
+      - 43
+      - 62
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.658
+      - 0.294
+- id: '1591563762778'
+  name: blue lamp
+  entities:
+    light.lampa_vid_soffa:
+      brightness: 62
+      effect_list:
+      - colorloop
+      friendly_name: Lampa vid soffa
+      hs_color:
+      - 224.916
+      - 70.196
+      is_deconz_group: false
+      max_mireds: 500
+      min_mireds: 153
+      rgb_color:
+      - 76
+      - 121
+      - 255
+      state: 'on'
+      supported_features: 63
+      xy_color:
+      - 0.167
+      - 0.137
+- id: '1599593625661'
+  name: bedroom blue
+  entities:
+    light.color_light_1:
+      brightness: 254
+      effect_list:
+      - colorloop
+      friendly_name: Alf Sänglampa
+      hs_color:
+      - 242.588
+      - 100
+      is_deconz_group: false
+      rgb_color:
+      - 10
+      - 0
+      - 255
+      state: 'on'
+      supported_features: 61
+      xy_color:
+      - 0.137
+      - 0.041
+- id: '1599593789976'
+  name: bedroom red
+  entities:
+    light.color_light_1:
+      brightness: 254
+      effect_list:
+      - colorloop
+      friendly_name: Alf Sänglampa
+      hs_color:
+      - 0
+      - 100
+      is_deconz_group: false
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      state: 'on'
+      supported_features: 61
+      xy_color:
+      - 0.701
+      - 0.299

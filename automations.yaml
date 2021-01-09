@@ -1,0 +1,154 @@
+- id: '1591435867308'
+  alias: Lights On at Sunset
+  description: ''
+  trigger:
+  - event: sunset
+    offset: -00:20:00
+    platform: sun
+  condition: []
+  action:
+  - device_id: ba7a007f9d154d2ca2df801f3a445913
+    domain: light
+    entity_id: light.living_room
+    type: turn_on
+  - device_id: 225985b848d34b45980618ea3644c71c
+    domain: light
+    entity_id: light.outhouse
+    type: turn_on
+  - device_id: 1e37c9697f06479b917842ef4f81f4eb
+    domain: switch
+    entity_id: switch.ljusnat_framsida
+    type: turn_on
+  - device_id: 23325d318a154db28f0db7cecab6e67a
+    domain: switch
+    entity_id: switch.garageslinga
+    type: turn_on
+  - device_id: 3a25630a6dd8410398b02a7dbd14e963
+    domain: switch
+    entity_id: switch.julgran
+    type: turn_on
+  - device_id: 8e37f2c5187843508afbf7d94777846b
+    domain: switch
+    entity_id: switch.vincent_julstjarna
+    type: turn_on
+  mode: single
+- id: '1591646441959'
+  alias: Turn lights off at midnight
+  description: ''
+  trigger:
+  - at: 00:00
+    platform: time
+  condition: []
+  action:
+  - device_id: 04b9ab1e8b0b412ca960c2c4844dc560
+    domain: light
+    entity_id: light.lampa_vid_soffa
+    type: turn_off
+  - device_id: 225985b848d34b45980618ea3644c71c
+    domain: light
+    entity_id: light.outhouse
+    type: turn_off
+  - device_id: 23325d318a154db28f0db7cecab6e67a
+    domain: switch
+    entity_id: switch.garageslinga
+    type: turn_off
+  - device_id: 1e37c9697f06479b917842ef4f81f4eb
+    domain: switch
+    entity_id: switch.ljusnat_framsida
+    type: turn_off
+  - device_id: 3a25630a6dd8410398b02a7dbd14e963
+    domain: switch
+    entity_id: switch.julgran
+    type: turn_off
+  - device_id: 8e37f2c5187843508afbf7d94777846b
+    domain: switch
+    entity_id: switch.vincent_julstjarna
+    type: turn_off
+  mode: single
+- id: brightness
+  alias: Brightness
+  trigger:
+    platform: state
+    entity_id: input_number.brightness
+  action:
+  - service: light.turn_on
+    entity_id: light.lampa_vid_soffa
+    data_template:
+      brightness: '{{ states(''input_number.brightness'') | int }}'
+- id: '1603544048743'
+  alias: Light on at 6:30
+  description: ''
+  trigger:
+  - at: '6:30'
+    platform: time
+  condition: []
+  action:
+  - device_id: d4787ea5398c49cdbb677dc1f808dfb6
+    domain: light
+    entity_id: light.dimmable_light_3
+    type: turn_on
+  - device_id: f8f9c0b278fa4b24a856ba0cd2116b23
+    domain: light
+    entity_id: light.dimmable_light_5
+    type: turn_on
+  - device_id: 23325d318a154db28f0db7cecab6e67a
+    domain: switch
+    entity_id: switch.garageslinga
+    type: turn_on
+  - device_id: 1e37c9697f06479b917842ef4f81f4eb
+    domain: switch
+    entity_id: switch.ljusnat_framsida
+    type: turn_on
+  - device_id: 3a25630a6dd8410398b02a7dbd14e963
+    domain: switch
+    entity_id: switch.julgran
+    type: turn_on
+  mode: single
+- id: '1603544420871'
+  alias: Lights off at sunrise
+  description: ''
+  trigger:
+  - event: sunrise
+    offset: 00:25:00
+    platform: sun
+  condition: []
+  action:
+  - device_id: 225985b848d34b45980618ea3644c71c
+    domain: light
+    entity_id: light.outhouse
+    type: turn_off
+  - device_id: 23325d318a154db28f0db7cecab6e67a
+    domain: switch
+    entity_id: switch.garageslinga
+    type: turn_off
+  - device_id: 1e37c9697f06479b917842ef4f81f4eb
+    domain: switch
+    entity_id: switch.ljusnat_framsida
+    type: turn_off
+  - device_id: 3a25630a6dd8410398b02a7dbd14e963
+    domain: switch
+    entity_id: switch.julgran
+    type: turn_off
+  mode: single
+- id: '1607882149294'
+  alias: Vincent Christmas star
+  description: ''
+  trigger:
+  - at: '21:45'
+    platform: time
+  condition:
+  - condition: and
+    conditions:
+    - condition: time
+      weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+  action:
+  - device_id: 8e37f2c5187843508afbf7d94777846b
+    domain: switch
+    entity_id: switch.vincent_julstjarna
+    type: turn_off
+  mode: single

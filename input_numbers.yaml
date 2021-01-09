@@ -1,0 +1,8 @@
+
+brightness:
+  name: Brightness
+  initial: 0
+  min: 0
+  max: 255
+  step: 1
+  icon: mdi:brightness-5
